@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JDuuub Films | Automotive & Action Sports Media</title>
+  <meta name="description" content="Cinematic photo & video for cars, motorcycles, and action sports across Alabama.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="JDuuub Films logo" class="logo">
+        <div>
+          <h1>JDuuub Films</h1>
+          <p>Automotive & Action Sports Media</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="cta" href="#contact">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h2>Cinematic visuals that capture speed, sound & story.</h2>
+        <p>Sony a7III • DJI RS4 gimbal • DJI Mini 3 drone</p>
+        <a class="button" href="#contact">Get a quote</a>
+        <a class="button ghost" href="https://www.instagram.com/jduuub.films/" target="_blank" rel="noopener">See Instagram</a>
+      </div>
+      <div class="hero-media">
+        <!-- Replace the poster and src with an exported reel (MP4, H.264) -->
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+          <source src="assets/hero-reel.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <div class="container">
+      <h3>Featured Work</h3>
+      <div class="grid">
+        <!-- Replace thumbnails and href targets with your media -->
+        <a class="card" href="assets/feature1.mp4" target="_blank" rel="noopener">
+          <img src="assets/feature1.jpg" alt="Feature 1">
+          <span>Autocross Feature</span>
+        </a>
+        <a class="card" href="assets/feature2.mp4" target="_blank" rel="noopener">
+          <img src="assets/feature2.jpg" alt="Feature 2">
+          <span>Motorcycle Rollers</span>
+        </a>
+        <a class="card" href="assets/feature3.mp4" target="_blank" rel="noopener">
+          <img src="assets/feature3.jpg" alt="Feature 3">
+          <span>Night Shoot</span>
+        </a>
+        <a class="card" href="assets/feature4.mp4" target="_blank" rel="noopener">
+          <img src="assets/feature4.jpg" alt="Feature 4">
+          <span>Shop Promo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h3>Packages</h3>
+      <div class="cards">
+        <div class="service-card">
+          <h4>Starter</h4>
+          <p class="price">$150</p>
+          <ul>
+            <li>1 hour on location</li>
+            <li>5 edited photos</li>
+            <li>1 social reel (20–30s)</li>
+          </ul>
+        </div>
+        <div class="service-card featured">
+          <h4>Standard</h4>
+          <p class="price">$300</p>
+          <ul>
+            <li>Up to 2 hours on location</li>
+            <li>15 edited photos</li>
+            <li>1 cinematic reel (45–60s)</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h4>Event/Brand</h4>
+          <p class="price">$600+</p>
+          <ul>
+            <li>Half-day coverage</li>
+            <li>Drone capture</li>
+            <li>Multiple edits for social</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Custom packages available for shops, events, and teams.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <div>
+        <h3>About JDuuub Films</h3>
+        <p>I'm John Wyatt Mooney — a high school creator capturing the passion behind machines and movement. I shoot cars, motorcycles, and action sports with an eye for story and sound. Based in Alabama, available for travel.</p>
+        <p>Gear: Sony a7III, DJI RS4 gimbal, DJI Mini 3 drone.</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/jduuub.films/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@jduuub.films" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/@jduuubfilms" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h3>Book a Shoot</h3>
+      <p>Tell me what you're looking for — I'll reply with availability and a quote.</p>
+      <!-- Formspree or Netlify Forms compatible -->
+      <form method="POST" action="https://formspree.io/f/your-form-id" class="contact-form">
+        <div class="row">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <div class="row">
+          <label class="full">
+            What do you need?
+            <textarea name="message" rows="5" placeholder="Car/moto shoot, event coverage, promo video…"></textarea>
+          </label>
+        </div>
+        <input type="hidden" name="_subject" value="New Inquiry from JDuuubFilms.com">
+        <button class="button" type="submit">Send</button>
+      </form>
+      <p class="alt-contact">Prefer email? <a href="mailto:bookings@jduuubfilms.com">bookings@jduuubfilms.com</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> JDuuub Films • Alabama</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
