@@ -12,13 +12,26 @@ a{color:var(--fg);text-decoration:none}
 img{max-width:100%;display:block}
 h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margin:0 0 .5rem}
 
-.site-header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,11,11,.75);border-bottom:1px solid rgba(255,255,255,.08);z-index:10}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
-.brand{display:flex;gap:.75rem;align-items:center}
+/* --- Header --- */
+.site-header{
+  position:sticky;top:0;
+  backdrop-filter:saturate(180%) blur(8px);
+  background:rgba(11,11,11,.75);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:10
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 0;
+  gap:.75rem;
+  flex-wrap:wrap; /* allow nav to wrap under brand on narrow screens */
+}
+.brand{display:flex;gap:.75rem;align-items:center;min-width:0}
 .brand h1 {
   font-size: 3rem;
   margin: 0;
   line-height: 1.1;
+  white-space:nowrap; /* keeps brand tight but we’ll scale on mobile */
 }
 .brand p {
   margin: 0;
@@ -26,12 +39,17 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
   font-size: 0.95rem;
   color: var(--muted);
 }
-.logo{width:100px;height:100px;border-radius:50%;background:#000;object-fit:cover}
-.nav{display:flex;gap:1rem;align-items:center}
+.logo{width:100px;height:100px;border-radius:50%;background:#000;object-fit:cover;flex:0 0 auto}
+.nav{
+  display:flex;gap:1rem;align-items:center;
+  flex:1 1 auto;
+  justify-content:flex-end;
+}
 .nav a{opacity:.85}
 .nav .cta{padding:.4rem .8rem;border:1px solid rgba(255,255,255,.2);border-radius:999px}
 .nav a:hover{opacity:1}
 
+/* --- Hero --- */
 .hero{padding:3rem 0 1rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
 .hero-copy h2{font-size:2.2rem;margin-bottom:.5rem}
@@ -39,11 +57,13 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--fg)}
 .hero-video{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1)}
 
+/* --- Work --- */
 .work{padding:2rem 0}
 .work .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .card{border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;position:relative}
 .card span{position:absolute;left:.6rem;bottom:.6rem;background:rgba(0,0,0,.6);padding:.2rem .5rem;border-radius:6px;font-size:.85rem}
 
+/* --- Services --- */
 .services{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .service-card{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem}
@@ -53,12 +73,14 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 
 .note{opacity:.75;margin-top:1rem}
 
+/* --- About --- */
 .about{padding:2rem 0}
 .about-inner{display:grid;grid-template-columns:1.5fr .5fr;gap:2rem}
 .socials{display:flex;flex-direction:column;gap:.5rem}
 .socials a{opacity:.9}
 .socials a:hover{opacity:1}
 
+/* --- Contact --- */
 .contact{padding:2rem 0}
 .contact-form{display:flex;flex-direction:column;gap:1rem}
 .contact-form .row{display:flex;gap:1rem;flex-wrap:wrap}
@@ -67,11 +89,40 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 input,textarea{padding:.7rem .8rem;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#111;color:var(--fg)}
 .alt-contact{opacity:.85;margin-top:.5rem}
 
+/* --- Footer --- */
 .site-footer{padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.08);opacity:.85;text-align:center}
 
+/* Offset for sticky header when using #hash links */
+section{scroll-margin-top:88px}
+
+/* --- Tablet --- */
 @media (max-width: 900px){
   .hero-inner{grid-template-columns:1fr}
   .work .grid{grid-template-columns:repeat(2,1fr)}
   .cards{grid-template-columns:1fr}
   .about-inner{grid-template-columns:1fr}
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px){
+  .logo{width:64px;height:64px}
+  .brand h1{font-size:1.8rem}
+  .brand p{font-size:.9rem}
+  .header-inner{align-items:flex-start}
+  .nav{
+    order:2; /* move below brand */
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:.75rem;
+    margin-top:.25rem;
+  }
+  .nav .cta{padding:.45rem .9rem}
+  .hero{padding:1.75rem 0 .75rem}
+  .hero-copy h2{font-size:1.6rem}
+  .button{display:inline-block;margin-top:.5rem}
+  .work .grid{grid-template-columns:1fr} /* 1 column on phones */
+  .card span{font-size:.8rem}
+  .contact-form .row{gap:.75rem}
+  input,textarea{font-size:16px} /* prevent iOS zoom on focus */
 }
