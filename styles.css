@@ -58,6 +58,29 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--fg)}
 .hero-video{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1)}
 
+/* --- Social Links --- */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem; /* space between icon and text */
+  font-size: 1rem;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.social-icon {
+  width: 1.1em;   /* scales icon proportionally to text */
+  height: 1.1em;
+  object-fit: contain;
+  vertical-align: middle;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.social-link:hover .social-icon {
+  opacity: 1;
+}
+
 /* --- Work --- */
 .work{padding:2rem 0}
 .work .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
