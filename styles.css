@@ -45,7 +45,7 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
   flex:1 1 auto;
   justify-content:flex-end;
 }
-.nav a{opacity:.85}
+.nav a{opacity:.85;text-decoration:none}
 .nav .cta{padding:.4rem .8rem;border:1px solid rgba(255,255,255,.2);border-radius:999px}
 .nav a:hover{opacity:1}
 
