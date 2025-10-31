@@ -90,9 +90,13 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 /* --- Services --- */
 .services{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.service-card{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem}
 .service-card h4{margin-bottom:.25rem}
 .service-card .price{font-size:1.3rem;font-weight:600;margin:.25rem 0 .75rem}
+.service-card{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem;position:relative;overflow:hidden;}
+
+
+
+
 .service-card.featured{border-color:#fff}
 
 .note{opacity:.75;margin-top:1rem}
