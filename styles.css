@@ -58,6 +58,30 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--fg)}
 .hero-video{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1)}
 
+.hero-media {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;       /* ensures cropped edges are hidden */
+  border-radius: 14px;    /* matches your image style */
+  aspect-ratio: 16 / 9;   /* keeps consistent shape even on resize */
+  max-width: 600px;       /* match previous image width if needed */
+}
+
+.hero-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crops to fill container */
+  object-position: center;
+  border-radius: 14px;
+}
+
+
 /* --- Social Links --- */
 .social-link {
   display: inline-flex;
