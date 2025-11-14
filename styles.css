@@ -108,8 +108,62 @@ h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margi
 /* --- Work --- */
 .work{padding:2rem 0}
 .work .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.work .portrait-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;justify-items:center}
 .card{border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;position:relative}
+.portrait-grid .card{height:325px;width:100%;display:flex;align-items:center;justify-content:center}
+.portrait-grid .card img{width:100%;height:100%;object-fit:cover}
 .card span{position:absolute;left:.6rem;bottom:.6rem;background:rgba(0,0,0,.6);padding:.2rem .5rem;border-radius:6px;font-size:.85rem}
+
+/* --- Services Overview (Home Page) --- */
+.services-overview{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.service-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.service-overview-card{
+  display:flex;
+  flex-direction:column;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.service-overview-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.3);
+}
+.service-overview-card .card-image{
+  width:100%;
+  height:200px;
+  overflow:hidden;
+}
+.service-overview-card .card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.service-overview-card .card-content{
+  padding:1.25rem;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.service-overview-card .card-content h4{
+  font-size:1.5rem;
+  margin-bottom:.5rem;
+}
+.service-overview-card .card-content p{
+  color:var(--muted);
+  margin-bottom:1rem;
+  flex:1;
+}
+.service-overview-card .card-cta{
+  color:var(--accent);
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* --- Home About --- */
+.home-about{padding:2rem 0;text-align:center}
+.home-about .button{margin-top:1rem}
 
 /* --- Services --- */
 .services{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -151,7 +205,9 @@ section{scroll-margin-top:88px}
 @media (max-width: 900px){
   .hero-inner{grid-template-columns:1fr}
   .work .grid{grid-template-columns:repeat(2,1fr)}
+  .work .portrait-grid{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr}
+  .service-cards-grid{grid-template-columns:1fr}
   .about-inner{grid-template-columns:1fr}
 }
 
