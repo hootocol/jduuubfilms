@@ -1,109 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HVZP8LEDM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-5HVZP8LEDM');
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JDuuub Films | Photography & Videography</title>
-  <meta name="description" content="Professional photography and videography services for automotive and family moments across Alabama.">
+  <title>John Wyatt Media</title>
+  <meta name="description" content="Action video and visual storytelling by John Wyatt Mooney.">
+  <meta property="og:title" content="John Wyatt Media">
+  <meta property="og:description" content="Action video and visual storytelling by John Wyatt Mooney.">
+  <meta property="og:image" content="assets/hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/logo.png" alt="JDuuub Films logo" class="logo">
-        <div>
-          <h1>JDuuub Films</h1>
-          <p>Photography & Videography</p>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="automotive.html">Automotive</a>
-        <a href="portraits.html">Portraits</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+<body class="home">
+  <nav class="nav">
+    <a href="#" class="is-active" data-nav="home">Home</a>
+    <a href="#about" data-nav="about">About</a>
+  </nav>
 
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h2>Capturing life's most thrilling moments.</h2>
-        <p>From high-performance machines to special milestones and celebrations, we bring your story to life through cinematic photography and videography.</p>
-        <a href="https://www.instagram.com/jduuub.films/" target="_blank" class="social-link">
-          <img src="assets/instagram.png" alt="Instagram" class="social-icon">
-          <span>@jduuub.films</span>
-        </a>
+    <img class="hero__image" src="assets/hero.jpg" alt="">
+  </section>
+
+  <!-- About overlay: sits between hero and logo, opens when About is clicked -->
+  <aside class="about-overlay" id="aboutOverlay" aria-hidden="true">
+    <div class="about-overlay__inner">
+      <button class="about-overlay__close" type="button" aria-label="Close about" id="aboutClose">&times;</button>
+      <div class="about-overlay__text">
+        <div class="about__contact">
+          <div class="about__contact-row">
+            <div class="about__contact-label">John Wyatt Mooney</div>
+            <a href="mailto:jduuub123@gmail.com">jduuub123@gmail.com</a>
+          </div>
+          <div class="about__contact-row">
+            <div class="about__contact-label">Phone</div>
+            <a href="sms:+12053585771">205&middot;358&middot;5771</a>
+          </div>
+          <div class="about__contact-row">
+            <div class="about__contact-label">Based</div>
+            <span>Alabama &middot; Available for travel</span>
+          </div>
+          <div class="about__contact-row">
+            <div class="about__contact-label">Follow</div>
+            <a class="about__social" href="https://www.instagram.com/johnwyattmedia/" target="_blank" rel="noopener">
+              <img src="assets/instagram.png" alt="" class="about__social-icon">
+              <span>johnwyattmedia</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="about__bio">
+          <p>I&rsquo;m John Wyatt Mooney, a videographer and photographer from Birmingham, Alabama. I&rsquo;ve always loved being behind a camera, and I&rsquo;ve been enjoying the challenges of turning that into my brand. Traveling and experiencing is what I love to do and the camera is what&rsquo;s really allowed me to do that.</p>
+          <p>My speciality is shooting and editing professional looking content to ensure your brand sticks out.</p>
+        </div>
       </div>
-      <div class="hero-media">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="assets/cam_side.jpg"
-      >
-        <source src="assets/hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    </div>
-  </section>
 
-  <section class="services-overview">
-    <div class="container">
-      <h3>Our Services</h3>
-      <div class="service-cards-grid">
-        <a href="automotive.html" class="service-overview-card">
-          <div class="card-image">
-            <img src="assets/corvette.png" alt="Automotive Photography/Videography">
-          </div>
-          <div class="card-content">
-            <h4>Automotive Photography/Videography</h4>
-            <p>Cinematic photo and video for cars, motorcycles, and action sports. Capture the speed, style, and power of your machine.</p>
-            <span class="card-cta">View Packages →</span>
-          </div>
-        </a>
-        <a href="portraits.html" class="service-overview-card">
-          <div class="card-image">
-            <img src="assets/marks3.png" alt="Portrait Photography">
-          </div>
-          <div class="card-content">
-            <h4>Portrait Photography</h4>
-            <p>Beautiful, candid moments for families, graduations, birthdays, sweet 16, and special occasions.</p>
-            <span class="card-cta">View Packages →</span>
-          </div>
-        </a>
-      </div>
+      <img class="about-overlay__photo" src="assets/about/portrait.jpg" alt="John Wyatt Mooney">
     </div>
-  </section>
+  </aside>
 
-  <section class="home-about">
-    <div class="container">
-      <h3>About JDuuub Films</h3>
-      <p>I'm John Wyatt Mooney — a creator dedicated to capturing energy and emotion through the lens. Whether it's the roar of an engine or the laughter of a family gathering, I bring technical expertise and creative vision to every project.</p>
-      <a href="about.html" class="button">Learn More</a>
-    </div>
-  </section>
+  <!-- Logo lives outside .hero so it can render above the about overlay -->
+  <img class="hero__logo" src="assets/logo.png" alt="JWMedia">
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> JDuuub Films • Alabama</p>
-    </div>
+  <footer class="footer">
+    <span>&copy; <span id="year"></span> John Wyatt Media</span>
   </footer>
 
   <script src="script.js"></script>
