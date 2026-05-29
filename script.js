@@ -43,15 +43,6 @@
       });
     }
 
-    // Close button (X) inside the panel — primary close trigger on mobile
-    const closeBtn = document.getElementById('aboutClose');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeOverlay();
-      });
-    }
-
     // Click outside the inner panel closes
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) closeOverlay();
