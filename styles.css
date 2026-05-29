@@ -440,7 +440,7 @@ img, video {
   /* Shift the hero crop further right so the car (right side of frame)
      sits well within the portrait viewport */
   .hero__image {
-    object-position: 60% center;
+    object-position: 65% center;
   }
   .nav {
     font-size: 14px;
