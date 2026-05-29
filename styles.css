@@ -437,6 +437,11 @@ img, video {
 
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
+  /* Shift the hero crop right so the subject (car on right side of frame)
+     stays in the viewport on portrait phones */
+  .hero__image {
+    object-position: 75% center;
+  }
   .nav {
     font-size: 14px;
     gap: 22px;
