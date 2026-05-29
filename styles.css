@@ -1,299 +1,496 @@
-/* Minimal, clean styles */
-:root{
-  --bg:#0b0b0b;
-  --fg:#f2f2f2;
-  --muted:#b8b8b8;
-  --accent:#ffffff;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-.container{width:min(1100px,92%);margin:0 auto}
-a{color:var(--fg);text-decoration:underline}
-img{max-width:100%;display:block}
-h1,h2,h3,h4{font-family:Oswald, Montserrat, sans-serif;letter-spacing:.5px;margin:0 0 .5rem}
+/* =========================================================
+   John Wyatt Media — JWMedia
+   Black, edge-to-edge, action-video-first design system.
+   ========================================================= */
 
-/* --- Header --- */
-.site-header{
-  position:sticky;top:0;
-  backdrop-filter:saturate(180%) blur(8px);
-  background:rgba(11,11,11,.75);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  z-index:10
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --muted: #888;
+  --nav-pad: clamp(20px, 2.5vw, 32px);
 }
-.header-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.75rem 0;
-  gap:.75rem;
-  flex-wrap:wrap; /* allow nav to wrap under brand on narrow screens */
-}
-.brand{display:flex;gap:.75rem;align-items:center;min-width:0}
-.brand h1 {
-  font-size: 3rem;
+
+* { box-sizing: border-box; }
+
+html, body {
   margin: 0;
-  line-height: 1.1;
-  white-space:nowrap; /* keeps brand tight but we’ll scale on mobile */
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-.brand p {
-  margin: 0;
-  line-height: 1.2;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-.logo{width:100px;height:100px;border-radius:50%;background:#000;object-fit:cover;flex:0 0 auto}
-.nav{
-  display:flex;gap:1rem;align-items:center;
-  flex:1 1 auto;
-  justify-content:flex-end;
-}
-.nav a{opacity:.8;text-decoration:none}
-.nav .cta{padding:.4rem .8rem;border:1px solid rgba(255,255,255,.2);border-radius:999px}
-.nav a:hover{opacity:1}
 
-/* --- Hero --- */
-.hero{padding:3rem 0 1rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-.hero-copy h2{font-size:2.2rem;margin-bottom:.5rem}
-.hero-poster{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 12px rgba(0,0,0,.5);background:#111}
-.button{display:inline-block;margin-right:.6rem;margin-top:.3rem;padding:.7rem 1rem;background:var(--fg);color:#111;border-radius:10px;font-weight:700}
-.button.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--fg)}
-.hero-video{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1)}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.hero-media {
-  flex: 1 1 400px;
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- Top nav (all pages) ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: clamp(24px, 3vw, 48px);
+  padding: var(--nav-pad);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.nav a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.25s ease;
+}
+
+.nav a:hover {
+  /* Brighter on hover, but never fully opaque — keeps the see-through feel */
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.nav a.is-active {
+  color: #fff;
+}
+
+/* ---------- Home: full-bleed hero ---------- */
+.hero {
   position: relative;
-  overflow: hidden;       /* ensures cropped edges are hidden */
-  border-radius: 14px;    /* matches your image style */
-  aspect-ratio: 16 / 9;   /* keeps consistent shape even on resize */
-  max-width: 600px;       /* match previous image width if needed */
-}
-
-.hero-media video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* crops to fill container */
-  object-position: center;
-  border-radius: 14px;
-}
-
-.hero-media--tall {
-  aspect-ratio: 16 / 9;
-  max-width: 600px;
-}
-
-.hero-media--tall .video-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  border-radius: 14px;
+  background: #000;
 }
 
-.hero-media--tall video {
+.hero__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 14px;
 }
 
-@media (max-width: 900px) {
-  .hero-media--tall {
-    justify-content: center;
-  }
-}
-
-
-/* --- Social Links --- */
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem; /* space between icon and text */
-  font-size: 1rem;
-  color: var(--fg);
-  text-decoration: none;
-}
-
-.social-icon {
-  width: 1.1em;   /* scales icon proportionally to text */
-  height: 1.1em;
-  object-fit: contain;
-  vertical-align: middle;
+.hero__logo {
+  /* Fixed so it sits above the about overlay (which is also fixed). */
+  position: fixed;
+  top: clamp(24px, 6vh, 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92vw, 1500px);
+  z-index: 40;
+  pointer-events: none;
+  mix-blend-mode: overlay;
   opacity: 0.9;
-  transition: opacity 0.2s ease-in-out;
 }
 
-.social-link:hover .social-icon {
+/* ---------- About overlay ----------
+   Wrapper is transparent and click-through outside the panel.
+   Only the panel itself is visible. Panel fades in/out. */
+.about-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none;
+  /* Top padding clears the JWMedia logo at all viewport widths.
+     Logo aspect = 4.70:1, width up to 92vw → height up to ~19.5vw.
+     Top of logo = clamp(24px,6vh,80px). So bottom of logo ≈ 24px + 19.5vw.
+     We add a comfortable gap below that. */
+  padding-top: calc(clamp(24px, 6vh, 80px) + min(20vw, 320px) + clamp(12px, 2vh, 24px));
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+  padding-bottom: clamp(16px, 2.5vh, 32px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  overflow-y: auto;
+}
+
+.about-overlay.is-open {
   opacity: 1;
 }
 
-/* --- Work --- */
-.work{padding:2rem 0}
-.work .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.work .portrait-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;justify-items:center}
-.card{border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;position:relative}
-.portrait-grid .card{height:325px;width:100%;display:flex;align-items:center;justify-content:center}
-.portrait-grid .card img{width:100%;height:100%;object-fit:cover}
-.portrait-grid .card--portrait{height:auto;aspect-ratio:3/4}
-.work .portrait-row{grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem;justify-items:stretch}
-.portrait-row .card{width:100%;display:flex;align-items:center;justify-content:center}
-.portrait-row .card--portrait{aspect-ratio:3/4}
-.portrait-row .card img{width:100%;height:100%;object-fit:cover}
-.card span{position:absolute;left:.6rem;bottom:.6rem;background:rgba(0,0,0,.6);padding:.2rem .5rem;border-radius:6px;font-size:.85rem}
-
-/* --- Services Overview (Home Page) --- */
-.services-overview{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.service-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.service-overview-card{
-  display:flex;
-  flex-direction:column;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  overflow:hidden;
-  text-decoration:none !important;
-  transition:transform .2s ease,border-color .2s ease;
-  color:inherit;
-  -webkit-tap-highlight-color:transparent;
-  -webkit-text-decoration:none !important;
-}
-.service-overview-card *{
-  text-decoration:none !important;
-  -webkit-text-decoration:none !important;
-}
-.service-overview-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,255,255,.3);
-}
-.service-overview-card:active{
-  transform:translateY(-2px);
-}
-.service-overview-card .card-image{
-  width:100%;
-  height:200px;
-  overflow:hidden;
-}
-.service-overview-card .card-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.service-overview-card .card-content{
-  padding:1.25rem;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-}
-.service-overview-card .card-content h4{
-  font-size:1.5rem;
-  margin-bottom:.5rem;
-  color:var(--fg);
-}
-.service-overview-card .card-content p{
-  color:var(--muted);
-  margin-bottom:1rem;
-  flex:1;
-}
-.service-overview-card .card-cta{
-  color:var(--accent);
-  font-weight:600;
-  text-decoration:none;
-  margin-top:auto;
+/* Wrapper stays click-through so the rest of the page stays interactive.
+   The panel itself catches clicks when the overlay is open. */
+.about-overlay.is-open .about-overlay__inner {
+  pointer-events: auto;
 }
 
-/* --- Home About --- */
-.home-about{padding:2rem 0;text-align:center}
-.home-about .button{margin-top:1rem}
-
-/* --- Services --- */
-.services{padding:2rem 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.service-card h4{margin-bottom:.25rem}
-.service-card .price{font-size:1.3rem;font-weight:600;margin:.25rem 0 .75rem}
-.service-card{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1rem;position:relative;overflow:hidden;}
-
-
-
-
-.service-card.featured{border-color:#fff}
-
-.note{opacity:.75;margin-top:1rem}
-
-/* --- About --- */
-.about{padding:2rem 0}
-.about-inner{display:grid;grid-template-columns:1.5fr .5fr;gap:2rem}
-.socials{display:flex;flex-direction:column;gap:.5rem}
-.socials a{opacity:.9}
-.socials a:hover{opacity:1}
-
-/* --- Contact --- */
-.contact{padding:2rem 0}
-.contact-form{display:flex;flex-direction:column;gap:1rem}
-.contact-form .row{display:flex;gap:1rem;flex-wrap:wrap}
-.contact-form label{display:flex;flex-direction:column;gap:.25rem;flex:1}
-.contact-form label.full{flex-basis:100%}
-input,textarea{padding:.7rem .8rem;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#111;color:var(--fg)}
-.alt-contact{opacity:.85;margin-top:.5rem}
-
-/* --- Footer --- */
-.site-footer{padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.08);opacity:.85;text-align:center}
-
-/* Offset for sticky header when using #hash links */
-section{scroll-margin-top:88px}
-
-/* --- Tablet --- */
-@media (max-width: 900px){
-  .hero-inner{grid-template-columns:1fr}
-  .work .grid{grid-template-columns:repeat(2,1fr)}
-  .work .portrait-grid{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .service-cards-grid{grid-template-columns:1fr}
-  .about-inner{grid-template-columns:1fr}
+.about-overlay__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  /* Match the JWMedia logo width exactly */
+  width: min(92vw, 1500px);
+  align-items: stretch;
+  background: rgba(15, 15, 15, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: clamp(20px, 2.5vw, 40px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  transform: translateY(8px);
+  transition: transform 0.35s ease;
 }
 
-/* --- Mobile --- */
-@media (max-width: 600px){
-  .logo{width:64px;height:64px}
-  .brand h1{font-size:1.8rem}
-  .brand p{font-size:.9rem}
-  .header-inner{align-items:flex-start}
-  .nav{
-    order:2; /* move below brand */
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:.75rem;
-    margin-top:.25rem;
+.about-overlay.is-open .about-overlay__inner {
+  transform: translateY(0);
+}
+
+.about-overlay__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  /* 44px is the iOS minimum tap-target size */
+}
+
+.about-overlay__close:hover,
+.about-overlay__close:focus-visible {
+  opacity: 1;
+  outline: none;
+}
+
+.about-overlay__text {
+  color: #fff;
+}
+
+.about-overlay__photo {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: center;
+  background: #0a0a0a;
+  border-radius: 12px;
+  align-self: stretch;
+}
+
+@media (max-width: 1024px) {
+  .about-overlay__inner {
+    grid-template-columns: 1fr;
   }
-  .nav .cta{padding:.45rem .9rem}
-  .hero{padding:1.75rem 0 2rem}
-  .hero-copy h2{font-size:1.6rem;margin-bottom:.75rem}
-  .hero-copy p{font-size:.95rem;line-height:1.5;margin-bottom:.5rem}
-  .button{display:inline-block;margin-top:.5rem}
-  .work .grid{grid-template-columns:1fr} /* 1 column on phones */
-  .card span{font-size:.8rem}
-  .contact-form .row{gap:.75rem}
-  input,textarea{font-size:16px} /* prevent iOS zoom on focus */
+  .about-overlay__photo {
+    aspect-ratio: 4 / 5;
+    max-width: 420px;
+    justify-self: start;
+  }
+}
 
-  /* Mobile service cards */
-  .services-overview{padding:2.5rem 0}
-  .services-overview h3{font-size:1.5rem;margin-bottom:1.5rem}
-  .service-cards-grid{gap:2rem}
-  .service-overview-card{border:2px solid rgba(255,255,255,.25)}
-  .service-overview-card .card-image{height:200px}
-  .service-overview-card .card-content{padding:1.25rem}
-  .service-overview-card .card-content h4{font-size:1.4rem;margin-bottom:.5rem}
-  .service-overview-card .card-content p{font-size:.95rem;margin-bottom:.85rem;line-height:1.5}
-  .service-overview-card .card-cta{font-size:.95rem}
+/* Mobile: panel goes full-screen for max readability */
+@media (max-width: 600px) {
+  .about-overlay {
+    padding: 0;
+  }
+  .about-overlay__inner {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border: 0;
+    padding: 72px 20px 32px;
+    gap: 24px;
+    background: rgba(10, 10, 10, 0.95);
+  }
+  .about-overlay__close {
+    top: 12px;
+    right: 12px;
+  }
+  .about-overlay__photo {
+    max-width: 100%;
+  }
+}
 
-  /* Mobile home about */
-  .home-about{padding:2.5rem 0}
-  .home-about h3{font-size:1.5rem;margin-bottom:1rem}
-  .home-about p{font-size:.95rem;line-height:1.6}
+/* ---------- Page wrapper (Work / About) ---------- */
+.page {
+  min-height: 100vh;
+  /* Bottom padding leaves room for the fixed footer mark */
+  padding: clamp(60px, 9vh, 100px) clamp(20px, 4vw, 64px) clamp(60px, 8vh, 100px);
+}
+
+/* ---------- Work grid ---------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: clamp(40px, 8vh, 80px);
+}
+
+.work-tile {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0a0a0a;
+  cursor: pointer;
+}
+
+.work-tile video,
+.work-tile img.work-tile__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+}
+
+.work-tile img.work-tile__poster {
+  z-index: 1;
+}
+
+.work-tile video {
+  z-index: 2;
+  opacity: 0;
+  /* Block all interaction so browser-injected video controls can't be clicked,
+     and hover still bubbles to the parent .work-tile */
+  pointer-events: none;
+}
+
+/* Nuke any UA media controls that try to render on top of the tile */
+.work-tile video::-webkit-media-controls,
+.work-tile video::-webkit-media-controls-panel,
+.work-tile video::-webkit-media-controls-enclosure,
+.work-tile video::-webkit-media-controls-overlay-play-button,
+.work-tile video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.work-tile.is-playing video {
+  opacity: 1;
+}
+
+.work-tile.is-playing img.work-tile__poster {
+  opacity: 0;
+}
+
+.work-tile:hover video,
+.work-tile:hover img.work-tile__poster {
+  transform: scale(1.03);
+}
+
+.work-tile__caption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 3;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.work-tile__title {
+  font-weight: 700;
+  color: #fff;
+}
+
+.work-tile__tag {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.work-tile__number {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 3;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+/* ---------- Page heading (massive type, left-aligned) ---------- */
+.page-heading {
+  font-size: clamp(48px, 10vw, 180px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ---------- About layout ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 2.4fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  margin-top: clamp(24px, 4vh, 48px);
+  align-items: start;
+}
+
+.about__contact {
+  font-size: clamp(16px, 1.4vw, 20px);
+  letter-spacing: 0.02em;
+  margin-bottom: clamp(40px, 6vh, 64px);
+}
+
+.about__contact-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: clamp(12px, 1vw, 14px);
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+.about__contact-row {
+  margin-bottom: 22px;
+}
+
+.about__contact-row a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.about__contact-row a:hover {
+  border-bottom-color: #fff;
+}
+
+.about__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.about__social:hover {
+  border-bottom-color: #fff;
+}
+
+.about__social-icon {
+  width: 1.1em;
+  height: 1.1em;
+  object-fit: contain;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.about__bio {
+  font-size: clamp(16px, 1.4vw, 22px);
+  line-height: 1.45;
+  max-width: 80ch;
+}
+
+.about__bio p {
+  margin: 0 0 1.1em;
+}
+
+.about__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  background: #0a0a0a;
+}
+
+/* Optional second image stacked below */
+.about__photo + .about__photo {
+  margin-top: 2px;
+}
+
+/* ---------- Footer (tiny corner mark) ---------- */
+.footer {
+  position: fixed;
+  left: var(--nav-pad);
+  bottom: var(--nav-pad);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  z-index: 50;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.footer .footer__email {
+  pointer-events: auto;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.footer .footer__email:hover {
+  opacity: 1;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about__photo {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .nav {
+    font-size: 14px;
+    gap: 22px;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__logo {
+    top: clamp(60px, 10vh, 100px);
+  }
+  .page {
+    padding: 100px 16px 60px;
+  }
+  .footer {
+    font-size: 9px;
+  }
+}
+
+/* ---------- Respect motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .work-tile video {
+    display: none;
+  }
+  .work-tile img.work-tile__poster {
+    opacity: 1 !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
