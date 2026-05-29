@@ -3,7 +3,8 @@ Place your media here for the new johnwyattmedia.com site:
 REQUIRED:
 - logo.png             — JWMedia logo (transparent PNG, wide aspect, ~2000px wide). Will be blended over the hero image.
 - hero.jpg             — Home hero static image (high-res landscape JPEG, recommend 2560px wide).
-- about/portrait.jpg   — Portrait of John for the About page (high-res JPEG, portrait orientation).
+- about/portrait.mp4   — Portrait video clip for the About overlay (autoplays, muted, loops; recommend portrait orientation, ~5-10s loop, < 5MB).
+- about/portrait.jpg   — Poster frame for the portrait video (shows while video loads).
 
 WORK PAGE (6 tiles):
 - work/reel-01.mp4 ... work/reel-06.mp4  — short loops (~5–10s, <8MB each)

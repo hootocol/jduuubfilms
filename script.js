@@ -9,6 +9,8 @@
     const aboutLink = document.querySelector('[data-nav="about"]');
     const homeLink = document.querySelector('[data-nav="home"]');
 
+    const overlayVideo = overlay.querySelector('video.about-overlay__photo');
+
     const openOverlay = () => {
       overlay.classList.add('is-open');
       overlay.setAttribute('aria-hidden', 'false');
@@ -18,6 +20,10 @@
       if (homeLink) homeLink.classList.remove('is-active');
       // Reflect in URL so the state survives a refresh and is shareable
       if (location.hash !== '#about') history.replaceState(null, '', '#about');
+      if (overlayVideo) {
+        const p = overlayVideo.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+      }
     };
 
     const closeOverlay = () => {
@@ -27,6 +33,7 @@
       if (aboutLink) aboutLink.classList.remove('is-active');
       if (homeLink) homeLink.classList.add('is-active');
       if (location.hash === '#about') history.replaceState(null, '', location.pathname);
+      if (overlayVideo) overlayVideo.pause();
     };
 
     if (aboutLink) {

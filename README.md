@@ -28,7 +28,8 @@ assets/
     reel-01.mp4 ... reel-06.mp4
     reel-01.jpg ... reel-06.jpg   (poster frames)
   about/
-    portrait.jpg
+    portrait.mp4       Portrait video clip (autoplays in about overlay)
+    portrait.jpg       Poster frame for portrait video
 ```
 
 ## Deploy
