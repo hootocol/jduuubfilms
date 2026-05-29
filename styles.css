@@ -437,10 +437,10 @@ img, video {
 
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
-  /* Shift the hero crop right so the subject (car on right side of frame)
-     stays in the viewport on portrait phones */
+  /* Shift the hero crop further right so the car (right side of frame)
+     sits well within the portrait viewport */
   .hero__image {
-    object-position: 75% center;
+    object-position: 90% center;
   }
   .nav {
     font-size: 14px;
