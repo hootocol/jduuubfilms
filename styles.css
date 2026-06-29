@@ -88,7 +88,7 @@ img, video {
   top: clamp(24px, 6vh, 80px);
   left: 50%;
   transform: translateX(-50%);
-  width: min(92vw, 1500px);
+  width: min(78vw, 1280px);
   z-index: 40;
   pointer-events: none;
   mix-blend-mode: overlay;
@@ -136,7 +136,7 @@ img, video {
   grid-template-columns: 2fr 1fr;
   gap: clamp(28px, 4vw, 56px);
   /* Match the JWMedia logo width exactly */
-  width: min(92vw, 1500px);
+  width: min(78vw, 1280px);
   align-items: stretch;
   background: rgba(15, 15, 15, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.08);
