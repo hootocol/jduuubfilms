@@ -37,12 +37,14 @@ img, video {
 /* ---------- Top nav (all pages) ---------- */
 .nav {
   position: fixed;
-  top: 0;
+  /* Align nav vertical center with the logo's vertical center
+     (same anchor band as .hero__logo top) so they read as one header. */
+  top: clamp(60px, 9vh, 130px);
   right: 0;
   z-index: 50;
   display: flex;
   gap: clamp(24px, 3vw, 48px);
-  padding: var(--nav-pad);
+  padding: 0 var(--nav-pad);
   font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 600;
   letter-spacing: 0.18em;
