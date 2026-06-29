@@ -64,13 +64,16 @@ img, video {
   color: #fff;
 }
 
-/* ---------- Home: full-bleed hero ---------- */
+/* ---------- Home: full-bleed hero ----------
+   Fixed so the image is pinned to the visible viewport and never
+   slides under the nav/logo when the iOS address bar collapses
+   or the page rubber-bands on overscroll. */
 .hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  inset: 0;
   overflow: hidden;
   background: #000;
+  z-index: 0;
 }
 
 .hero__image {
