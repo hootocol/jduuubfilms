@@ -451,6 +451,7 @@ img, video {
   }
   .hero__logo {
     top: clamp(60px, 10vh, 100px);
+    width: 92vw;
   }
   .page {
     padding: 100px 16px 60px;
