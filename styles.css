@@ -440,7 +440,7 @@ img, video {
   /* Pull the source crop to the left so the visible image slides right
      in the portrait viewport (puts the car/smoke in the right half). */
   .hero__image {
-    object-position: 20% center;
+    object-position: 35% center;
   }
   .nav {
     font-size: 14px;
